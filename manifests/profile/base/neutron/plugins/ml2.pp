@@ -75,5 +75,9 @@ class tripleo::profile::base::neutron::plugins::ml2 (
     if 'nuage' in $mechanism_drivers {
       include ::tripleo::profile::base::neutron::plugins::ml2::nuage
     }
+
+    if 'cumulus' in $mechanism_drivers {
+      include ::neutron::plugins::ml2::cumulus
+    }
   }
 }
